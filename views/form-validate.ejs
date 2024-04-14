@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Declaring character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport settings -->
+    <title>Form Validate</title> <!-- Page title -->
+    <link rel="stylesheet" href="/form-style.css"> <!-- Linking external CSS stylesheet -->
+</head>
+<body>
+    <form action="/submit" method="post" class="form" enctype="multipart/form-data">
+        <!-- Form for user input, submitting data to /submit route via POST method -->
+        <label for="name">Name:</label> <!-- Label for name input field -->
+        <input type="text" id="name" name="name" required><br> <!-- Text input for name with 'required' attribute -->
+
+        <label for="email">Email:</label> <!-- Label for email input field -->
+        <input type="email" id="email" name="email" required><br> <!-- Email input with 'required' attribute -->
+
+        <label for="image">Image:</label> <!-- Label for image input field -->
+        <input type="file" id="image" name="image" accept="image/*" required><br> <!-- File input for image with 'required' attribute -->
+
+        <button type="submit">Submit</button> <!-- Submit button for form -->
+
+    </form>
+
+    <% if (errors) { %> <!-- Checking if there are validation errors -->
+        <div class="error-container"> <!-- Container for displaying errors -->
+            <h3>Error(s):</h3> <!-- Heading for error messages -->
+            <ul>
+                <% errors.forEach(error => { %> <!-- Looping through each error -->
+                    <li><%= error.msg %></li> <!-- Displaying error message -->
+                <% }); %>
+            </ul>
+        </div>
+    <% } %>
+</body>
+</html>

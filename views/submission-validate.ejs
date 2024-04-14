@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Declaring character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport settings -->
+    <title>Submission</title> <!-- Page title -->
+    <link rel="stylesheet" href="/submission-style.css"> <!-- Linking external CSS stylesheet -->
+</head>
+<body>
+    <div class="container">
+        <!-- Container for form submission details -->
+        <h1>Form Submission</h1> <!-- Heading for form submission title -->
+        <div class="detail">
+            <!-- Container for displaying name detail -->
+            <label for="name">Name:</label> <!-- Label for name detail -->
+            <span><%= name %></span> <!-- Displaying submitted name -->
+        </div>
+        <div class="detail">
+            <!-- Container for displaying email detail -->
+            <label for="email">Email:</label> <!-- Label for email detail -->
+            <span><%= email %></span> <!-- Displaying submitted email -->
+        </div>
+        <div class="detail">
+            <!-- Container for displaying image detail -->
+            <label for="image">Image:</label> <!-- Label for image detail -->
+            <img src="/<%= imagePath %>" alt="Uploaded Image"> <!-- Displaying uploaded image -->
+        </div>
+    </div>
+</body>
+</html>
